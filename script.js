@@ -1,4 +1,4 @@
-var css = document.querySelector("h3");
+var css = document.querySelector("textarea");
 var color1 = document.querySelector(".color1");
 var color2 = document.querySelector(".color2");
 var body = document.getElementById("gradient");
@@ -20,3 +20,10 @@ function randomise() {
 // EventListener, trigger setGradient function on input(color) selection
 color1.addEventListener("input", setGradient);
 color2.addEventListener("input", setGradient);
+
+function copyText() {
+  css.select();
+  document.execCommand("copy");
+  css.setSelectionRange(0, 0);
+  css.blur();
+}
